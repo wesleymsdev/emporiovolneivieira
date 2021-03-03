@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Rotas de paginas sem autenticação (web)
-
 Route::get('/consulting', function () {
     return view('consulting');
 });
@@ -29,6 +28,23 @@ Route::get('/history', function () {
 
 Route::get('/', function () {
     return view('index');
+});
+
+// Rotas Admin
+Route::get('/admin/catalog', function () {
+    return view('admin/catalog');
+});
+
+Route::get('/admin/categories', function () {
+    return view('admin/categories');
+});
+
+Route::get('/admin/suppliers', function () {
+    return view('admin/suppliers');
+});
+
+Route::get('/admin/users', function () {
+    return view('admin/users');
 });
 
 // fim rotas sem autenticação
