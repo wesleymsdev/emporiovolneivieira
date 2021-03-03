@@ -1,0 +1,1 @@
+ <a href="https://wa.me/5511955309409"><img src=" {{asset('img/social-icons/whatsapp-green.svg')}} " width=" 50px" height="50px" alt="whatsapp armazem vieira" /></a>

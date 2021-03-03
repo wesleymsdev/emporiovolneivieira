@@ -1,107 +1,104 @@
 #footer {
-    position        : relative;
-    flex-direction  : column;
-    justify-content : center;
-    align-items     : center;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--blue-1);
-    width           : 100%;
-    min-width       : 320px;
-    height          : 278px;
+    width: 100%;
+    min-width: 320px;
+    height: 278px;
 
     .container {
         height: 100%;
-        width : 100%;
+        width: 100%;
 
         .left {
             display: none;
         }
 
         .center {
-            width         : 100%;
-            align-items   : center;
+            width: 100%;
+            align-items: center;
             flex-direction: column;
 
             .logo-footer {
-                border-radius   : 2%;
-                margin-top      : -25px;
-                width           : 85px;
-                height          : 85px;
-                z-index         : 1;
+                border-radius: 2%;
+                margin-top: -25px;
+                width: 85px;
+                height: 85px;
+                z-index: 1;
                 background-color: var(--blue-1);
-                justify-content : center;
-                align-items     : center;
-                border-radius   : 50%;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
 
                 img {
-                    width : 70px;
+                    width: 70px;
                     height: 70px;
-
                 }
             }
 
             .contacts {
-                width          : 200px;
+                width: 200px;
                 justify-content: space-around;
-                margin-top     : var(--space-30);
+                margin-top: var(--space-30);
 
                 a {
                     path {
-                        transition-duration: .6s;
+                        transition-duration: 0.6s;
                     }
                 }
 
                 a:hover {
                     path {
-                        fill      : var(--gray);
-                        transition: .4s;
+                        fill: var(--gray);
+                        transition: 0.4s;
                     }
                 }
             }
 
             .phone {
                 font-size: 16px;
-                margin   : 0px;
-                color    : var(--gray);
+                margin: 0px;
+                color: var(--gray);
             }
 
             .mail {
                 font-size: 16px;
-                margin   : 0;
-                color    : var(--gray);
+                margin: 0;
+                color: var(--gray);
             }
         }
 
         .right {
-
             display: none;
-
         }
     }
 
     .footer {
         justify-content: center;
-        width          : 95%;
-        position       : absolute;
-        bottom         : 0;
-        text-align     : center;
-        border-top     : 1px solid var(--gray-1);
-        color          : var(--gray);
-        font-size      : 14px;
+        width: 95%;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        border-top: 1px solid var(--gray-1);
+        color: var(--gray);
+        font-size: 14px;
     }
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
     #footer {
         height: 308px;
 
         .container {
             .center {
                 .logo-footer {
-                    width : 95px;
+                    width: 95px;
                     height: 95px;
 
                     img {
-                        width : 80px;
+                        width: 80px;
                         height: 80px;
                     }
                 }
@@ -110,17 +107,17 @@
     }
 }
 
-@media(min-width:1024px) {
+@media (min-width: 1024px) {
     #footer {
         .container {
             .center {
                 .logo-footer {
-                    width     : 105px;
-                    height    : 105px;
+                    width: 105px;
+                    height: 105px;
                     margin-top: -25px;
 
                     img {
-                        width : 90px;
+                        width: 90px;
                         height: 90px;
                     }
                 }
@@ -129,51 +126,49 @@
     }
 }
 
-@media(min-width:1440px) {
+@media (min-width: 1440px) {
     #footer {
         .container {
             width: 95%;
 
             .left {
                 display: flex;
-                width  : 200px;
+                width: 200px;
 
                 .menu-footer {
                     ul {
-                        flex-direction : column;
-                        height         : 240px;
-                        margin         : 0;
-                        padding        : 0;
+                        flex-direction: column;
+                        height: 240px;
+                        margin: 0;
+                        padding: 0;
                         justify-content: center;
 
                         li {
                             padding: 3px;
 
                             a {
-                                text-decoration    : none;
-                                font-size          : 16px;
-                                text-transform     : uppercase;
-                                color              : var(--gray);
-                                transition-duration: .4s;
+                                text-decoration: none;
+                                font-size: 16px;
+                                color: var(--gray);
+                                transition-duration: 0.4s;
                             }
 
                             a:hover {
-                                transition: .4s;
-                                color     : var(--gray-1);
+                                transition: 0.4s;
+                                color: var(--gray-1);
                             }
                         }
                     }
-
                 }
             }
 
             .center {
                 .logo-footer {
-                    width : 105px;
+                    width: 105px;
                     height: 105px;
 
                     img {
-                        width : 90px;
+                        width: 90px;
                         height: 90px;
                     }
                 }
@@ -188,38 +183,36 @@
             }
 
             .right {
-                display        : flex;
-                flex-direction : column;
-                height         : 240px;
-                align-items    : center;
+                display: flex;
+                flex-direction: column;
+                height: 240px;
+                align-items: center;
                 justify-content: center;
 
                 h1 {
                     font-size: 16px;
-                    color    : var(--gray);
+                    color: var(--gray);
                 }
 
                 .social-icons {
-                    width          : 200px;
+                    width: 200px;
                     justify-content: space-between;
-                    align-items    : center;
+                    align-items: center;
 
                     a {
                         path {
-                            transition-duration: .6s;
+                            transition-duration: 0.6s;
                         }
                     }
 
                     a:hover {
                         path {
-                            fill      : var(--gray);
-                            transition: .6s;
+                            fill: var(--gray);
+                            transition: 0.6s;
                         }
                     }
                 }
-
             }
-
         }
 
         .footer {
@@ -228,101 +221,93 @@
     }
 }
 
-@media(min-width:1920px) {
+@media (min-width: 1920px) {
     #footer {
         .container {
             width: 95%;
 
             .left {
                 display: flex;
-                width  : 200px;
+                width: 200px;
 
                 .menu-footer {
                     ul {
-                        flex-direction : column;
-                        height         : 240px;
-                        margin         : 0;
-                        padding        : 0;
+                        flex-direction: column;
+                        height: 240px;
+                        margin: 0;
+                        padding: 0;
                         justify-content: center;
 
                         li {
                             padding: 3px;
 
                             a {
-                                text-decoration    : none;
-                                font-size          : 20px;
-                                text-transform     : uppercase;
-                                color              : var(--gray);
-                                transition-duration: .4s;
+                                text-decoration: none;
+                                font-size: 16px;
+                                color: var(--gray);
+                                transition-duration: 0.4s;
                             }
 
                             a:hover {
-                                transition: .4s;
-                                color     : var(--gray-1);
+                                transition: 0.4s;
+                                color: var(--gray-1);
                             }
                         }
                     }
-
                 }
             }
 
             .center {
                 .logo-footer {
-                    width : 120px;
+                    width: 120px;
                     height: 120px;
 
                     img {
-                        width : 100px;
+                        width: 100px;
                         height: 100px;
                     }
                 }
 
                 .phone {
-                    font-size: 22px;
-                }
-
-                .mail {
-                    font-size: 22px;
+                    font-size: 18px;
                 }
             }
 
             .right {
-                display        : flex;
-                flex-direction : column;
-                height         : 240px;
-                align-items    : center;
+                display: flex;
+                flex-direction: column;
+                height: 240px;
+                align-items: center;
                 justify-content: center;
 
                 h1 {
                     font-size: 18px;
-                    color    : var(--gray);
+                    color: var(--gray);
                 }
 
                 .social-icons {
-                    width          : 200px;
+                    width: 200px;
                     justify-content: space-between;
-                    align-items    : center;
+                    align-items: center;
 
                     a {
                         path {
-                            transition-duration: .6s;
+                            transition-duration: 0.6s;
                         }
                     }
 
                     a:hover {
                         path {
-                            fill      : var(--gray);
-                            transition: .6s;
+                            fill: var(--gray);
+                            transition: 0.6s;
                         }
                     }
                 }
-
             }
-
         }
 
         .footer {
-            font-size: 18px;
+            font-size: 16px;
         }
     }
 }
