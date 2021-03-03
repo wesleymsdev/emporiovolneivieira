@@ -508,7 +508,6 @@ body {
 }
 #overlay .menu ul li > a {
   text-decoration: none;
-  text-transform: uppercase;
   font-size: 16px;
   font-weight: 300;
   color: var(--white);

@@ -72,7 +72,7 @@
     </footer>
 
     <!--Script Menu Mobile Start-->
-    <script src="{{asset('js/utils.js')}}"></script>
+    <script src="{{asset('resources/js/utils.js')}}"></script>
     <!--End Script Menu Mobile-->
 </body>
 
