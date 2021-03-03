@@ -1,0 +1,51 @@
+#wineries-logo {
+    margin               : 0 auto;
+    width                : 90%;
+    display              : grid;
+    grid-template-columns: 1fr;
+    grid-gap             : 10px;
+    padding              : var(--space-10);
+    border-top           : 1px solid var(--gray-2);
+    border-bottom        : 1px solid var(--gray-2);
+
+    .logo-wineries {
+        justify-content : center;
+        align-items     : center;
+        background-color: white;
+        padding         : var(--space-10);
+        /* border       : 1px solid var(--gray-2);*/
+    }
+
+}
+
+@media(min-width:768px) {
+    #wineries-logo {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media(min-width:1024px) {
+    #wineries-logo {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+
+@media(min-width:1440px) {
+    #wineries-logo {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .banner {
+            grid-column-end: 3;
+        }
+    }
+
+}
+
+@media(min-width:1920px) {
+    #wineries-logo {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+}

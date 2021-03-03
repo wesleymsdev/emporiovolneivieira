@@ -1,0 +1,88 @@
+#admin {
+    .container {
+
+        .list-of-wineries {
+            width          : 100%;
+            justify-content: center;
+            flex-wrap      : wrap;
+
+            .wineries {
+                flex-direction  : column;
+                justify-content : center;
+                align-items     : center;
+                background-color: var(--gray-bg);
+                width           : 100%;
+                margin          : 5px;
+                padding         : 5px;
+            }
+
+            img {
+                width : 174px;
+                height: 120px;
+            }
+
+            h3 {
+                margin   : 0;
+                padding  : 0;
+                font-size: 22px;
+            }
+
+            small {
+                text-align: center;
+            }
+
+
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    #admin {
+        .container {
+            .list-of-wineries {
+                display  : flex;
+                flex-wrap: wrap;
+
+                .wineries {
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1440px) {
+    #admin {
+        .container {
+            .list-of-wineries {
+
+                .wineries {
+                    width: 25%;
+
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1920px) {
+    #admin {
+        .container {
+            .list-of-wineries {
+
+                .wineries {
+                    width: 18%;
+
+                    h3 {
+                        font-size: 24px;
+                    }
+
+                    small {
+                        font-size: 18px;
+                    }
+
+                }
+            }
+        }
+    }
+}

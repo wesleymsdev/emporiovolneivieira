@@ -1,0 +1,77 @@
+#bannerHome {
+    position           : relative;
+    width              : 100%;
+    height             : 377px;
+    background-color   : var(--black);
+    background-image   : url('../images/background/armazem-vieira-atacado.webp');
+    background-repeat  : no-repeat;
+    background-position: center;
+    background-size    : cover;
+
+    .over {
+        position        : absolute;
+        flex-direction  : column;
+        justify-content : center;
+        align-items     : center;
+        width           : 100%;
+        height          : 100%;
+        background-color: var(--blue);
+        opacity         : .5;
+
+        >h1 {
+            color         : var(--white);
+            text-transform: uppercase;
+            padding       : 0;
+            margin        : 0;
+        }
+
+        span {
+            color    : var(--white);
+            font-size: 14px;
+        }
+    }
+
+
+}
+
+@media(min-width: 768px) {
+
+    #bannerHome {
+        height: 577px;
+
+        .over {
+            >h1 {
+                font-size: 55px;
+            }
+
+            span {
+                font-size: 18px;
+            }
+        }
+    }
+
+}
+
+@media(min-width: 1024px) {
+
+    #bannerHome {
+        height: 577px;
+    }
+
+}
+
+@media(min-width: 1440px) {
+
+    #bannerHome {
+        height: 577px;
+    }
+
+}
+
+@media(min-width: 1920px) {
+
+    #bannerHome {
+        height: 950px;
+    }
+
+}

@@ -7,7 +7,9 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "sass": "sass --watch resources/sass/main.scss:public/css/main.css",
+        "build": "sass resources/sass/main.scss:public/css/main.css --style=compressed"
     },
     "devDependencies": {
         "axios": "^0.21",

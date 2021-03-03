@@ -1,0 +1,80 @@
+#consultoria {
+    position             : relative;
+    background-image     : url("../images/background/consultoria-vinhos-vinicolas-brasil.webp");
+    background-size      : cover;
+    background-position-x: -100px;
+    background-position-y: 60px;
+    background-repeat    : no-repeat;
+    justify-content      : center;
+    align-items          : center;
+    width                : 100%;
+    height               : 100vh;
+
+    .overlay {
+        position        : absolute;
+        width           : 100%;
+        height          : 100%;
+        background-color: var(--blue);
+        opacity         : .5;
+    }
+
+    .container {
+        position      : relative;
+        padding       : var(--space-10);
+        flex-direction: column;
+        margin-top    : calc(50% - 10px);
+        max-width     : 694px;
+
+        small {
+            margin-left: calc(50% - 140px);
+            color      : var(--white);
+        }
+
+        img {
+
+            margin: 0 auto;
+        }
+
+        p {
+            padding-top: var(--space-20);
+            text-align : justify;
+            color      : var(--gray-1);
+            font-size  : 14px;
+        }
+
+    }
+}
+
+@media(min-width: 1024px) {
+    #consultoria {
+        .container {
+            margin-top: 40%;
+        }
+    }
+}
+
+@media(min-width: 1440px) {
+    #consultoria {
+        justify-content: flex-end;
+
+        .container {
+            margin-top  : 20%;
+            margin-right: var(--space-20);
+        }
+    }
+}
+
+@media(min-width:1920px) {
+    #consultoria {
+        background-position-x: 0px;
+
+        .container {
+            margin-top  : 10%;
+            margin-right: 5%;
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+}

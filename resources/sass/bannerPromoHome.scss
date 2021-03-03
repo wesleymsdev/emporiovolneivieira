@@ -1,0 +1,201 @@
+.bannerPromoHome {
+    flex-direction : row;
+    justify-content: space-between;
+    align-items    : center;
+    width          : 100%;
+    height         : 110px;
+    border-bottom  : 1px solid #ccc;
+
+    .delivery {
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+        width          : 25%;
+        height         : 100%;
+        border-right   : 1px solid #ccc;
+
+        >svg {
+            width: 50px;
+        }
+
+        >span {
+            font-size     : 10px;
+            text-transform: uppercase;
+            color         : var(--blue);
+        }
+
+        >small {
+            font-size : 8px;
+            text-align: center;
+            color     : var(--blue);
+        }
+    }
+
+    .payment {
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+        border-right   : 1px solid #ccc;
+        width          : 25%;
+        height         : 100%;
+
+        >svg {
+            width: 50px;
+        }
+
+        >span {
+            font-size     : 10px;
+            text-transform: uppercase;
+            color         : var(--blue);
+        }
+
+        >small {
+            font-size : 8px;
+            text-align: center;
+            color     : var(--blue);
+        }
+    }
+
+    .discount {
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+        border-right   : 1px solid #ccc;
+        width          : 25%;
+        height         : 100%;
+
+        >svg {
+            width : 50px;
+            height: 50px;
+        }
+
+        >span {
+            font-size     : 10px;
+            text-transform: uppercase;
+            color         : var(--blue);
+        }
+
+        >small {
+            font-size : 8px;
+            text-align: center;
+            color     : var(--blue);
+        }
+    }
+
+    .safeBuy {
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+        width          : 25%;
+        height         : 100%;
+
+        >svg {
+            width : 50px;
+            height: 50px;
+        }
+
+        >span {
+            font-size     : 10px;
+            text-transform: uppercase;
+            color         : var(--blue);
+        }
+
+        >small {
+            font-size : 8px;
+            text-align: center;
+            color     : var(--blue);
+        }
+    }
+}
+
+@media(min-width:768px) {
+
+    .bannerPromoHome {
+        .delivery {
+            >span {
+                font-size: 14px;
+            }
+
+            >small {
+                font-size: 11px;
+            }
+        }
+
+        .payment {
+            >span {
+                font-size: 14px;
+            }
+
+            >small {
+                font-size: 11px;
+            }
+        }
+
+        .discount {
+            >span {
+                font-size: 14px;
+            }
+
+            >small {
+                font-size: 11px;
+            }
+        }
+
+        .safeBuy {
+            >span {
+                font-size: 14px;
+            }
+
+            >small {
+                font-size: 11px;
+            }
+        }
+    }
+
+}
+
+@media(min-width:1440px) {
+
+    .bannerPromoHome {
+        .delivery {
+            >span {
+                font-size: 18px;
+            }
+
+            >small {
+                font-size: 14px;
+            }
+        }
+
+        .payment {
+            >span {
+                font-size: 18px;
+            }
+
+            >small {
+                font-size: 14px;
+            }
+        }
+
+        .discount {
+            >span {
+                font-size: 18px;
+            }
+
+            >small {
+                font-size: 14px;
+            }
+        }
+
+        .safeBuy {
+            >span {
+                font-size: 18px;
+            }
+
+            >small {
+                font-size: 14px;
+            }
+        }
+    }
+
+}

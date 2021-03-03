@@ -1,0 +1,103 @@
+#productsHome {
+    margin               : 0 auto;
+    width                : 90%;
+    display              : grid;
+    grid-template-columns: 1fr;
+    grid-gap             : 10px;
+    padding              : var(--space-10);
+
+    .banner {
+        grid-column-start: 1;
+        grid-column-end  : 1;
+        background-color : var(--black);
+        justify-content  : center;
+        align-items      : center;
+        font-size        : 24px;
+        color            : var(--white);
+        height           : 762px;
+    }
+
+    .product {
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+        padding        : var(--space-20);
+        border         : 1px solid var(--gray-2);
+
+        .image {
+            background-color: var(--white);
+        }
+
+        .title-product {
+            margin    : 0;
+            padding   : 0;
+            font-size : 22px;
+            text-align: center;
+        }
+
+        .description {
+            flex-direction: column;
+
+            >p {
+                text-align: justify;
+            }
+
+            .description-bold {
+                font-weight: 600;
+            }
+
+            .btn {
+                margin-top      : var(--space-10);
+                text-align      : center;
+                background-color: var(--green-1);
+                padding         : var(--space-10);
+                text-decoration : none;
+                font-weight     : 600;
+                color           : var(--white);
+            }
+
+            .btn:hover {
+                background-color: var(--green);
+                transition      : .2s;
+            }
+        }
+
+    }
+
+}
+
+@media(min-width:768px) {
+    #productsHome {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media(min-width:1024px) {
+    #productsHome {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .product {
+            box-shadow: inset 0 0, 10px 0 1em var(--gray-1);
+        }
+    }
+
+}
+
+@media(min-width:1440px) {
+    #productsHome {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .banner {
+            grid-column-end: 3;
+        }
+    }
+
+}
+
+@media(min-width:1920px) {
+    #productsHome {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+}
