@@ -15,7 +15,7 @@
          <path d="M23,247.4H1a1.036,1.036,0,0,1,0-2.071H23a1.036,1.036,0,0,1,0,2.071Zm0,0" transform="translate(0 -229.457)" fill="#ffffff" />
      </svg>
  </div>
- <!--Header Menu Desktop Inicio -->
+ <!--header menu desktop web Inicio -->
  <nav class="menu-desktop">
      <ul>
          <li>

@@ -13,18 +13,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
+//Rotas de paginas sem autenticação (web)
+
+Route::get('/consulting', function () {
+    return view('consulting');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/history', function () {
+    return view('history');
+});
 
 Route::get('/', function () {
     return view('index');
 });
 
+// fim rotas sem autenticação
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware('auth')->group(function () {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+
 
 require __DIR__ . '/auth.php';
