@@ -9,11 +9,18 @@
         <div class="image">Foto</div>
 
         <div class="user-log">
-            <p>Wesley Franca</p>
-            <small>Manager</small>
+            <p>{{ Auth::user()->name }}</p>
+            <small>Seja bem vindo(a)</small>
         </div>
+        <form method="POST" action="{{ route('logout') }}" enctype="multipart/form-data">
+            @csrf
+            <img src="{{ asset('img/icones/exit.svg') }}" width="24" height="24" alt="exit icon" />
 
-        <a href="#">Sair</a>
+            <a :href="route('logout')" onclick="event.preventDefault();
+                                        this.closest('form').submit();">Sair</a>
+
+        </form>
+
 
     </div>
 </div>
