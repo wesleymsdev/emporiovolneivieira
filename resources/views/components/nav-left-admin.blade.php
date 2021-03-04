@@ -8,9 +8,9 @@
 
              <li>
                  <img src=" {{ asset('img/icones/category.svg') }}" width="24" height="24" alt="new-category icon" />
-                 <a href="">Categorias</a>
+                 <a href=">Categorias</a>
              </li>
-             <!-- <span class="title">PRODUTOS</span> -->
+             <!-- <span class=" title">PRODUTOS</span> -->
 
              <li>
                  <img src="{{ asset('img/icones/list.svg') }}" width="24" height="24" alt="catalogo icon" />

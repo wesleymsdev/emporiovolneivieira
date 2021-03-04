@@ -35,9 +35,7 @@ Route::get('/admin/catalog', function () {
     return view('admin/catalog');
 });
 
-Route::get('/admin/categories', function () {
-    return view('admin/categories');
-});
+
 
 Route::get('/admin/suppliers', function () {
     return view('admin/suppliers');
@@ -58,6 +56,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin/catalog', function () {
         return view('admin/catalog');
+    });
+
+    Route::get('/admin/categories', function () {
+        return view('admin/categories');
     });
 });
 

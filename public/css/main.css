@@ -1542,9 +1542,10 @@ body {
   font-size: 18px;
 }
 #admin .container .list_of_categories ul li a {
-  background-color: var(--red);
+  background-color: var(--darkblue);
   width: 100px;
   padding: 5px;
+  font-size: 16px;
   justify-content: center;
   text-align: center;
   text-decoration: none;
@@ -1552,7 +1553,7 @@ body {
   transition: 0.3s ease-out;
 }
 #admin .container .list_of_categories ul li a:hover {
-  background-color: var(--red-1);
+  background-color: var(--darkblue-1);
   transition: 0.3s ease-in;
 }
 #admin .container .registered-users {
@@ -1658,30 +1659,30 @@ body {
   #admin .teste .log .user-log p {
     font-size: 14px;
     margin: 0;
-    color: indigo;
+    color: var(--darkblue);
   }
   #admin .teste .log .user-log small {
     color: var(--gray);
   }
   #admin .teste .log a {
     text-decoration: none;
-    background-color: indigo;
+    background-color: var(--darkblue);
     padding: 14px;
     color: var(--white);
     transition: 0.3s ease-in;
     cursor: pointer;
   }
   #admin .teste .log a:hover {
-    background-color: #8736c0;
+    background-color: var(--darkblue-1);
     transition: 0.3s ease-in;
   }
   #admin .menu-left {
     flex-direction: column;
     position: fixed;
     display: flex;
-    width: 35%;
+    width: 30%;
     height: 100%;
-    background-color: darkslateblue;
+    background-color: var(--darkblue);
   }
   #admin .menu-left .top {
     position: relative;
@@ -1706,7 +1707,7 @@ body {
   }
   #admin .menu-left nav ul li {
     padding: 1px;
-    margin: 0 30px;
+    margin: 0 22px;
     width: 85%;
     align-items: center;
     transition: 0.2s ease-in-out;
@@ -1715,17 +1716,19 @@ body {
     padding: 7px;
     font-weight: 300;
     text-decoration: none;
+    line-height: 31px;
+    width: 100%;
     font-size: 16px;
     color: var(--white);
     transition: 0.2s ease-in-out;
   }
   #admin .menu-left nav ul li:hover {
     transition: 0.2s ease-in;
-    background-color: var(--white);
+    background-color: #524896;
     cursor: pointer;
   }
   #admin .menu-left nav ul li:hover a {
-    color: var(--blue);
+    color: var(--white);
   }
   #admin .menu-left .logout {
     flex-direction: column;
@@ -2280,6 +2283,8 @@ body {
   --blue-4: #0d0366;
   --blue-5: #3f6ca6;
   --blue-6: #1374f2;
+  --darkblue: #483d8b;
+  --darkblue-1: rgb(98, 87, 175);
   --white: #ffffff;
   --gray: #9c9c9c;
   --gray-1: #cccccc;

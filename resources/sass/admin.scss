@@ -175,16 +175,17 @@
                     padding: 10px;
                     font-size: 18px;
                     a {
-                        background-color: var(--red);
+                        background-color: var(--darkblue);
                         width: 100px;
                         padding: 5px;
+                        font-size: 16px;
                         justify-content: center;
                         text-align: center;
                         text-decoration: none;
                         color: var(--white);
                         transition: 0.3s ease-out;
                         &:hover {
-                            background-color: var(--red-1);
+                            background-color: var(--darkblue-1);
                             transition: 0.3s ease-in;
                         }
                     }
@@ -310,7 +311,7 @@
                     p {
                         font-size: 14px;
                         margin: 0;
-                        color: indigo;
+                        color: var(--darkblue);
                     }
                     small {
                         color: var(--gray);
@@ -319,13 +320,13 @@
 
                 a {
                     text-decoration: none;
-                    background-color: indigo;
+                    background-color: var(--darkblue);
                     padding: 14px;
                     color: var(--white);
                     transition: 0.3s ease-in;
                     cursor: pointer;
                     &:hover {
-                        background-color: rgb(135, 54, 192);
+                        background-color: var(--darkblue-1);
                         transition: 0.3s ease-in;
                     }
                 }
@@ -336,9 +337,9 @@
             flex-direction: column;
             position: fixed;
             display: flex;
-            width: 35%;
+            width: 30%;
             height: 100%;
-            background-color: darkslateblue;
+            background-color: var(--darkblue);
 
             .top {
                 position: relative;
@@ -365,7 +366,7 @@
 
                     li {
                         padding: 1px;
-                        margin: 0 30px;
+                        margin: 0 22px;
                         width: 85%;
                         //border-bottom: 1px solid var(--gray);
                         align-items: center;
@@ -375,6 +376,8 @@
                             padding: 7px;
                             font-weight: 300;
                             text-decoration: none;
+                            line-height: 31px;
+                            width: 100%;
                             font-size: 16px;
                             color: var(--white);
                             transition: 0.2s ease-in-out;
@@ -382,11 +385,11 @@
 
                         &:hover {
                             transition: 0.2s ease-in;
-                            background-color: var(--white);
+                            background-color: rgb(82, 72, 150);
                             cursor: pointer;
 
                             a {
-                                color: var(--blue);
+                                color: var(--white);
                             }
                         }
                     }
