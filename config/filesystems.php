@@ -7,13 +7,13 @@ return [
     | Default Filesystem Disk
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the default filesystem disk that should be used
-    | by the framework. The "local" disk, as well as a variety of cloud
-    | based disks are available to your application. Just store away!
+    | Aqui você pode especificar o disco padrão do sistema de arquivos que deve ser usado
+    | pela estrutura. O disco "local", bem como uma variedade de nuvem
+    | discos baseados estão disponíveis para seu aplicativo. Basta guardar!
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'public'),
 
     /*
     |--------------------------------------------------------------------------
@@ -38,8 +38,16 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
+            'file' => [
+                'public' => 0664,
+                'private' => 0600,
+            ],
+            'dir' => [
+                'public' => 0775,
+                'private' => 0700,
+            ],
         ],
 
         's3' => [

@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class header-admin extends Component
+class HeaderAdmin extends Component
 {
     /**
      * Create a new component instance.

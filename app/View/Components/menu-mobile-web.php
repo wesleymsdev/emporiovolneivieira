@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class menu-mobile-web extends Component
+class MenuMobileWeb extends Component
 {
     /**
      * Create a new component instance.

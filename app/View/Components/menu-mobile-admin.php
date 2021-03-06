@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class menu-mobile-admin extends Component
+class MenuMobileAdmin extends Component
 {
     /**
      * Create a new component instance.

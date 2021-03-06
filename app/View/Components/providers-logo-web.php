@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class providers-logo-web extends Component
+class ProvidersLogoWeb extends Component
 {
     /**
      * Create a new component instance.

@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class banner-promotions-web extends Component
+class bannerPromotionsWeb extends Component
 {
     /**
      * Create a new component instance.

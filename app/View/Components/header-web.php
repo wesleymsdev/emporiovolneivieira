@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class header-web extends Component
+class HeaderWeb extends Component
 {
     /**
      * Create a new component instance.

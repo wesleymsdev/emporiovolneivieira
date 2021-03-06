@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SuppliersController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,23 +34,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Rotas Admin
-Route::get('/admin/catalog', function () {
-    return view('admin/catalog');
-});
-
-
-
-Route::get('/admin/suppliers', function () {
-    return view('admin/suppliers');
-});
-
 Route::get('/admin/users', function () {
     return view('admin/users');
 });
 
 // fim rotas sem autenticação
-
 
 Route::middleware('auth')->group(function () {
 
@@ -54,13 +46,33 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/admin/catalog', function () {
-        return view('admin/catalog');
-    });
+    // Rotas Admin
 
     Route::get('/admin/categories', function () {
         return view('admin/categories');
     });
+
+    Route::get('/admin/suppliers', [SuppliersController::class, 'index']);
+
+    //Rotas de categorias
+
+    Route::post('/admin/categories', [CategoriesController::class, 'store']);
+    Route::get('/admin/categories', [CategoriesController::class, 'index']);
+
+    //Rotas Usuários
+
+    Route::post('/new-user', [UserController::class, 'store']);
+    Route::get('/admin/users', [UserController::class, 'index']);
+
+    //Rotas Fornecedores
+
+    Route::post('/admin/new-supplier', [SuppliersController::class, 'store']);
+    //Route::get('/admin/suppliers', [SuppliersController::class, 'index']);
+
+    //Rotas Produtos
+
+    Route::get('/admin/catalog', [ProductController::class, 'index']);
+    Route::post('/new-product', [ProductController::class, 'store']);
 });
 
 

@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class nav-left-admin extends Component
+class NavLeftAdmin extends Component
 {
     /**
      * Create a new component instance.

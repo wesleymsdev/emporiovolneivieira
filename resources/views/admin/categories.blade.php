@@ -11,16 +11,16 @@
         <div class="container">
             <img id="close" src="{{ asset('img/icones/btn-close.svg') }}" width="24" height="24" alt="new-category icon" />
             <h2>Cadastrar nova categoria</h2>
-            <form method="POST" action="" enctype="multipart/form-data">
+            <form method="POST" action="/admin/categories" enctype="multipart/form-data">
                 @csrf
 
-                <input type="text" id="category" name="title" />
+                <input type="text" id="category" name="category" />
                 <label for="category">Titulo da categoria:</label>
                 <button type="submit" class="btn-submit">Cadastrar</button>
             </form>
         </div>
     </div>
-    <!--Over Menu Mobile Start-->
+    <!--Overlay Menu Mobile Start-->
     <div id="overlay" class=" ">
         <x-menu-mobile-admin></x-menu-mobile-admin>
     </div>
@@ -43,16 +43,27 @@
             <div class="list_of_categories">
 
                 <ul>
-
-                    <li>Categoria 1<a href="">Excluir</a></li>
-                    <li>Categoria 2<a href="">Excluir</a></li>
-                    <li>Categoria 3<a href="">Excluir</a></li>
-                    <li>Categoria 4<a href="">Excluir</a></li>
-
+                    @foreach($categories as $category)
+                    <li>{{ $category->category }}<a href="">Excluir</a></li>
+                    @endforeach
                 </ul>
 
             </div>
+
             <img class="new" src="{{ asset('img/icones/new.svg') }}" width="64" height="64" alt="new icon" />
+
+            @if($errors->any())
+            @foreach($errors->all() as $error)
+            <div class="alert-danger">{{ $error }}</div>
+            @endforeach
+            @endif
+
+            @if (session('response'))
+            <div class="alert-success">
+                {{ session('response') }}
+            </div>
+            @endif
+
         </div>
 
     </div>

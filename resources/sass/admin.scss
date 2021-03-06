@@ -15,7 +15,7 @@
     .container {
         flex-direction: column;
         width: 100%;
-
+        top: 62px;
         .new {
             position: absolute;
             right: 20px;
@@ -223,7 +223,7 @@
                 width: 70%;
             }
             h2 {
-                margin-top: 70px;
+                margin-top: 10px;
             }
 
             .list-product {
@@ -451,7 +451,7 @@
             align-items: center;
             right: 0;
             z-index: 1;
-            width: 65%;
+            width: 70%;
 
             form {
                 width: 95%;
@@ -489,6 +489,7 @@
 
         .container {
             width: 80%;
+            height: calc(100vh - 62px);
 
             form {
                 width: 80%;

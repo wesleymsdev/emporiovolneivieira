@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class whatsapp-web extends Component
+class WhatsappWeb extends Component
 {
     /**
      * Create a new component instance.

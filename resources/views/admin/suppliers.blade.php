@@ -12,7 +12,7 @@
             <img id="close" src="{{ asset('img/icones/btn-close.svg') }}" width="24" height="24" alt="new-category icon" />
             <h2>Cadastrar novo Fornecedores</h2>
 
-            <form method="POST" action="{{ url('/suppliers') }}" enctype=" multipart/form-data">
+            <form method="POST" action="/admin/new-supplier" enctype="multipart/form-data">
                 @csrf
                 <input type="text" id="title" name="title" />
                 <label for="title">Razão Social:</label>
@@ -70,13 +70,11 @@
             <h2>Fornecedores Cadastrados</h2>
 
             <div class="list-of-wineries">
-
-
-
+                @foreach($suppliers as $supplier)
                 <div class="wineries">
-                    <img src="" width="174" height="120" alt="">
-                    <h3>Fornecedor 1</h3>
-                    <small>Região sul, Brasil <br> Tel:. 11 123456789</small>
+                    <img src="{{url('storage/'.$supplier->image) }}" width="174" height="120" alt="">
+                    <h3>{{ $supplier->title }}</h3>
+                    <small>{{ $supplier->region }}, {{ $supplier->country }} <br> Tel:. {{ $supplier->phone }}</small>
                     <form action="#">
                         <input type="hidden" id="winerie" name="winerie" value="1">
                         <input type="hidden" id="winerie" name="winerie" value="1">
@@ -84,9 +82,7 @@
                         <a href="#" class="btn-edit">Editar</a>
                     </form>
                 </div>
-
-
-
+                @endforeach
             </div>
 
             <nav class="pagination">
@@ -96,8 +92,18 @@
                 </ul>
             </nav>
 
-
             <img class="new" src="{{ asset('img/icones/new.svg') }}" width="64" height="64" alt="new icon" />
+            @if($errors->any())
+            @foreach($errors->all() as $error)
+            <div class="alert-danger">{{ $error }}</div>
+            @endforeach
+            @endif
+
+            @if (session('response'))
+            <div class="alert-success">
+                {{ session('response') }}
+            </div>
+            @endif
         </div>
     </div>
 

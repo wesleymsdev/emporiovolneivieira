@@ -12,18 +12,19 @@
             <img id="close" src="{{ asset('img/icones/btn-close.svg') }}" width="24" height="24" alt="new-category icon" />
             <h2>Cadastrar novo usuário</h2>
 
-            <form method="POST" action="{{ url('/user') }}">
+            <form method="POST" action="/new-user" enctype="multipart/form-data">
+
                 @csrf
-                <input type="text" id="name" name="name" />
+                <input type="text" id="name" name="name" required />
                 <label for="name">Nome:</label>
 
-                <input type="text" id="email" name="email" />
+                <input type="email" id="email" name="email" required />
                 <label for="email">Email:</label>
 
-                <input type="password" id="password" name="password" />
+                <input type="password" id="password" name="password" required />
                 <label for="password">Senha:</label>
 
-                <button type="submit" class="btn-submit">Cadastrar</button>
+                <button type="submit" class="btn-submit"> Cadastrar</button>
 
             </form>
 
@@ -51,17 +52,28 @@
 
             <div class="registered-users">
 
-
+                @foreach($user as $users)
                 <div class="card">
-                    <p>Wesley Franca</p>
-                    <small>Email: teste@teste.com.br</small>
+                    <p>{{$users->name}}</p>
+                    <small>Email: {{ $users->email }}</small>
                     <small>Função: Manager</small>
                 </div>
-
+                @endforeach
 
             </div>
 
             <img class="new" src="{{ asset('img/icones/new.svg') }}" width="54" height="54" alt="new icon" />
+            @if($errors->any())
+            @foreach($errors->all() as $error)
+            <div class="alert-danger">{{ $error }}</div>
+            @endforeach
+            @endif
+
+            @if (session('response'))
+            <div class="alert-success">
+                {{ session('response') }}
+            </div>
+            @endif
         </div>
     </div>
 
