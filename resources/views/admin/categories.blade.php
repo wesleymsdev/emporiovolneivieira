@@ -13,10 +13,11 @@
             <h2>Cadastrar nova categoria</h2>
             <form method="POST" action="/admin/categories" enctype="multipart/form-data">
                 @csrf
-
-                <input type="text" id="category" name="category" />
-                <label for="category">Titulo da categoria:</label>
-                <button type="submit" class="btn-submit">Cadastrar</button>
+                <div class="col">
+                    <input type="text" id="category" name="category" />
+                    <label for="category">Titulo da categoria:</label>
+                    <button type="submit" class="btn-submit">Cadastrar</button>
+                </div>
             </form>
         </div>
     </div>

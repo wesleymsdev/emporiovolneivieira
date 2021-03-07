@@ -39,15 +39,15 @@
         <div class="banner">
             banner promotion one
         </div>
+        @foreach($feactured as $values)
         <div class="product">
             <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
+                <img src="{{ $values->image }}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
             </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
+            <p class="title-product">{{ $values->title }}</p>
 
             <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
+                <p>{{ $values->description }}</p>
                 <small>
                     <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
                 </small>
@@ -55,96 +55,31 @@
                     <span class="description-bold">Volume:</span> 1,5L
                 </small>
                 <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
+                    <span class="description-bold">Caixa:</span> {{ $values->qtda_per_carton }} unidades | 40x27x29 | 18 Kg
                 </small>
 
-                <a href="product.html" class="btn">Ver mais</a>
+                <a href="{{ 'product/'.$values->id }}" class="btn">Ver mais</a>
             </div>
         </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <!--Start Products Thu-->
     <div class="title-pages">
-        <h1>Produtos em destaque</h1>
+        <h1>Vinhos Empório</h1>
         <hr />
     </div>
 
     <div id="productsHome">
+        @foreach($wines as $values)
         <div class="product">
             <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
+                <img src="{{ $values->image }}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
             </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
+            <p class="title-product">{{ $values->title }}</p>
 
             <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
+                <p>{{ $values->description }}</p>
                 <small>
                     <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
                 </small>
@@ -152,387 +87,49 @@
                     <span class="description-bold">Volume:</span> 1,5L
                 </small>
                 <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
+                    <span class="description-bold">Caixa:</span> {{ $values->qtda_per_carton }} unidades | 40x27x29 | 18 Kg
                 </small>
 
-                <a href="product.html" class="btn">Ver mais</a>
+                <a href="{{ 'product/'.$values->id }}" class="btn">Ver mais</a>
             </div>
         </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="{{asset('img/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp')}}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
+        @endforeach
     </div>
+
+    </div>
+
+    <!--Start Products Thu-->
+    <div class="title-pages">
+        <h1>Sucos Empório</h1>
+        <hr />
+    </div>
+
+    <div id="productsHome">
+        @foreach($juices as $values)
+        <div class="product">
+            <div class="image">
+                <img src="{{ $values->image }}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
+            </div>
+            <p class="title-product">{{ $values->title }}</p>
+
+            <div class="description">
+                <p>{{ $values->description }}</p>
+                <small>
+                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
+                </small>
+                <small>
+                    <span class="description-bold">Volume:</span> 1,5L
+                </small>
+                <small>
+                    <span class="description-bold">Caixa:</span> {{ $values->qtda_per_carton }} unidades | 40x27x29 | 18 Kg
+                </small>
+
+                <a href="{{ 'product/'.$values->id }}" class="btn">Ver mais</a>
+            </div>
+        </div>
+        @endforeach
+    </div>
+
 
     <div class="title-pages" id="wineries">
         <h1>Alguns Parceiros</h1>
@@ -546,119 +143,20 @@
     <div class="divider-20"></div>
 
     <div class="title-pages">
-        <h1>Espumantes em destaque</h1>
-        <hr />
-    </div>
-    <!--Start Products Tree-->
-    <div id="productsHome">
-        <div class="banner">
-            banner promotion one
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="title-pages">
         <h1>Outros Produtos</h1>
         <hr />
     </div>
 
     <div id="productsHome">
+        @foreach($sparkling as $values)
         <div class="product">
             <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
+                <img src="{{ $values->image }}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
             </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
+            <p class="title-product">{{ $values->title }}</p>
 
             <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
+                <p>{{ $values->description }}</p>
                 <small>
                     <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
                 </small>
@@ -666,384 +164,13 @@
                     <span class="description-bold">Volume:</span> 1,5L
                 </small>
                 <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
+                    <span class="description-bold">Caixa:</span> {{ $values->qtda_per_carton }} unidades | 40x27x29 | 18 Kg
                 </small>
 
-                <a href="product.html" class="btn">Ver mais</a>
+                <a href="{{ 'product/'.$values->id }}" class="btn">Ver mais</a>
             </div>
         </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.webp" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
-            </div>
-            <p class="title-product">Vinho Branco Moscato Seco 1,5L</p>
-            <div class="description">
-                <p>Vinho branco bastante fácil de beber, com aromas florais que são característicos das uvas Moscato. Não é um
-                    vinho muito potente, por isso se tornal ideal para consumir no dia a dia.</p>
-                <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
-                </small>
-                <small>
-                    <span class="description-bold">Volume:</span> 1,5L
-                </small>
-                <small>
-                    <span class="description-bold">Caixa:</span> 6 unidades | 40x27x29 | 18 Kg
-                </small>
-                <a href="product.html" class="btn">Ver mais</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <!--Start footer-->

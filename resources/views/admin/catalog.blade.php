@@ -161,6 +161,7 @@
     <!--Scripts Start-->
     <script src="{{asset('js/utils.js')}}"></script>
     <script src="{{asset('js/modal.js')}}"></script>
+    <script src="{{asset('js/salutation.js')}}"></script>
     <!--End Script Menu Mobile-->
 </body>
 

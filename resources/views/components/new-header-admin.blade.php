@@ -10,7 +10,7 @@
 
         <div class="user-log">
             <p>{{ Auth::user()->name }}</p>
-            <small>Seja bem vindo(a)</small>
+            <small id="salutation">Seja bem vindo(a)</small>
         </div>
         <form method="POST" action="{{ route('logout') }}" enctype="multipart/form-data">
             @csrf

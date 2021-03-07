@@ -16,14 +16,30 @@ class ProductController extends Controller
      */
     public function index()
     {
+
         $products = DB::table('products')->paginate(12);
         $categories = DB::table('categories')->get();
         $suppliers = DB::table('suppliers')->get();
 
         return view('admin/catalog', [
-            'products' => $products,
+            'products'   => $products,
             'categories' => $categories,
-            'suppliers' => $suppliers
+            'suppliers'  => $suppliers
+        ]);
+    }
+
+    public function feactured()
+    {
+        $feactured = DB::table('products')->paginate(4);
+        $wines     = DB::table('products')->where('category_id', '=', 1)->get();
+        $juices    = DB::table('products')->where('category_id', '=', 2)->get();
+        $sparkling = DB::table('products')->where('category_id', '=', 3)->get();
+
+        return view('index', [
+            'feactured' => $feactured,
+            'wines'     => $wines,
+            'juices'    => $juices,
+            'sparkling' => $sparkling
         ]);
     }
 
@@ -95,7 +111,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $details = DB::table('products')->find($id);
+        return view('product', ['details' => $details]);
     }
 
     /**

@@ -40,12 +40,12 @@ class SuppliersController extends Controller
     public function store(Request $request)
     {
 
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'title'   => 'required|min:3|max:25',
             'country' => 'required|min:3|max:25',
             'region'  => 'required|min:3|max:25',
             'phone'   => 'required|min:3|max:25',
-            'image'   => 'required|image|mimes:jpeg,png,webp,jpg,gif,svg|max:2048',
+            'image'   => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:2048',
         ]);
 
         Suppliers::create([

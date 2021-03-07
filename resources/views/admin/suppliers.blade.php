@@ -14,35 +14,36 @@
 
             <form method="POST" action="/admin/new-supplier" enctype="multipart/form-data">
                 @csrf
-                <input type="text" id="title" name="title" />
-                <label for="title">Razão Social:</label>
+                <div class="col">
+                    <input type="text" id="title" name="title" />
+                    <label for="title">Razão Social:</label>
 
-                <input type="text" id="country" name="country" />
-                <label for="country">País de origem:</label>
+                    <input type="text" id="country" name="country" />
+                    <label for="country">País de origem:</label>
 
-                <input type="text" id="region" name="region" />
-                <label for="region">Região:</label>
+                    <input type="text" id="region" name="region" />
+                    <label for="region">Região:</label>
 
-                <input type="text" id="phone" name="phone" />
-                <label for="phone">Telefone:</label>
+                    <input type="text" id="phone" name="phone" />
+                    <label for="phone">Telefone:</label>
 
-                <label for="upload-image" class="upload-image">
-                    <input type="file" id="upload-image" name="image" />
-                    <svg xmlns="http://www.w3.org/2000/svg" width="42" height="32.972" viewBox="0 0 42 32.972">
-                        <g transform="translate(0 -55.032)">
-                            <g transform="translate(0 55.032)">
-                                <g transform="translate(0 0)">
-                                    <path d="M34.994,65.957a14.436,14.436,0,0,0-28.4,2.467A7.874,7.874,0,0,0,7.906,84.067h6.562V81.443H7.906a5.249,5.249,0,0,1,0-10.5,1.312,1.312,0,0,0,1.312-1.312,11.811,11.811,0,0,1,23.4-2.3,1.312,1.312,0,0,0,1.116,1.05,6.562,6.562,0,0,1-.892,13.058H27.592v2.625h5.249a9.186,9.186,0,0,0,2.152-18.111Z" transform="translate(0 -55.032)" />
-                                    <path d="M186.284,249.393l-5.249,5.249,1.85,1.85,3.018-3.005v12.586h2.625V253.487l3.005,3.005,1.85-1.85-5.249-5.249A1.312,1.312,0,0,0,186.284,249.393Z" transform="translate(-166.186 -233.1)" />
+                    <label for="upload-image" class="upload-image">
+                        <input type="file" id="upload-image" name="image" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="32.972" viewBox="0 0 42 32.972">
+                            <g transform="translate(0 -55.032)">
+                                <g transform="translate(0 55.032)">
+                                    <g transform="translate(0 0)">
+                                        <path d="M34.994,65.957a14.436,14.436,0,0,0-28.4,2.467A7.874,7.874,0,0,0,7.906,84.067h6.562V81.443H7.906a5.249,5.249,0,0,1,0-10.5,1.312,1.312,0,0,0,1.312-1.312,11.811,11.811,0,0,1,23.4-2.3,1.312,1.312,0,0,0,1.116,1.05,6.562,6.562,0,0,1-.892,13.058H27.592v2.625h5.249a9.186,9.186,0,0,0,2.152-18.111Z" transform="translate(0 -55.032)" />
+                                        <path d="M186.284,249.393l-5.249,5.249,1.85,1.85,3.018-3.005v12.586h2.625V253.487l3.005,3.005,1.85-1.85-5.249-5.249A1.312,1.312,0,0,0,186.284,249.393Z" transform="translate(-166.186 -233.1)" />
+                                    </g>
                                 </g>
                             </g>
-                        </g>
-                    </svg>
-                    Logotipo da vinicola</label>
-                <small>formato png - 174x120</small>
+                        </svg>
+                        Logotipo da vinicola</label>
+                    <small>formato png - 174x120</small>
 
-                <button type="submit" class="btn-submit">Cadastrar</button>
-
+                    <button type="submit" class="btn-submit">Cadastrar</button>
+                </div>
             </form>
         </div>
 
@@ -72,7 +73,7 @@
             <div class="list-of-wineries">
                 @foreach($suppliers as $supplier)
                 <div class="wineries">
-                    <img src="{{url('storage/'.$supplier->image) }}" width="174" height="120" alt="">
+                    <img src="{{ $supplier->image }}" width="174" height="120" alt="">
                     <h3>{{ $supplier->title }}</h3>
                     <small>{{ $supplier->region }}, {{ $supplier->country }} <br> Tel:. {{ $supplier->phone }}</small>
                     <form action="#">

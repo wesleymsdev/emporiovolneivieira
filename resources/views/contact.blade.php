@@ -25,7 +25,19 @@
             todos os seus momentos.</p>
 
     </main>
+    @if($errors->any())
+    @foreach($errors->all() as $error)
+    <div class="alert-danger">{{ $error }}</div>
+    @endforeach
+    @endif
+
+    @if (session('response'))
+    <div class="alert-success">
+        {{ session('response') }}
+    </div>
+    @endif
     <div id="sessionOneContact">
+
         <div class="sessionTwo">
             <div class="banner">
                 <div class="overlay">
@@ -34,25 +46,26 @@
             </div>
         </div>
         <div class="contact-form">
-            <form action="#">
-                <input type="text" name="nome" id="nome">
+            <form method="POST" action="/contact" enctype="multipart/form-data">
+                @csrf
+                <input type="text" name="name" id="nome" required />
                 <label for="nome">Nome</label>
 
-                <input type="text" name="Sobrenome" id="Sobrenome">
-                <label for="Sobrenome">Sobrenome</label>
+                <input type="text" name="company" id="company" />
+                <label for="company">Empresa</label>
 
-                <input type="mail" name="email" id="email">
+                <input type="mail" name="email" id="email" required />
                 <label for="email">E-mail</label>
 
-                <input type="phone" name="phone" id="phone">
+                <input type="phone" name="phone" id="phone" required />
                 <label for="phone">Telefone</label>
 
-                <input type="text" name="topic" id="topic">
+                <input type="text" name="topic" id="topic" />
                 <label for="topic">assunto</label>
 
                 <label for="terms"></label>
                 <div class="terms">
-                    <input type="checkbox" class="btn-terms" name="terms" id="terms">
+                    <input type="checkbox" class="btn-terms" name="terms" id="terms" required />
                     <small>Estou ciente da proibição legal contida no art. 81, II da Lei nº .069/90 de venda de bebidas
                         alcoólicas para crianças e adolescentes menores de 18 anos de idade.</small>
                 </div>
@@ -62,7 +75,9 @@
                     </button>
                 </div>
             </form>
+
         </div>
+
     </div>
 
     <!--Start footer-->

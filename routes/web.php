@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\UserController;
@@ -22,17 +23,22 @@ Route::get('/consulting', function () {
     return view('consulting');
 });
 
+//Contact
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::post('/contact', [ContactController::class, 'send']);
 
 Route::get('/history', function () {
     return view('history');
 });
 
-Route::get('/', function () {
-    return view('index');
-});
+//Products
+Route::get('/', [ProductController::class, 'feactured']);
+Route::get('/product/{id}', [ProductController::class, 'show']);
+
+
+
 
 Route::get('/admin/users', function () {
     return view('admin/users');
