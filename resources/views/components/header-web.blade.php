@@ -25,13 +25,13 @@
              <a href="{{url('history')}}">História</a>
          </li>
          <li>
-             <a href="{{url('products')}}">Produtos</a>
+             <a href="{{url('/#productsHome')}}">Produtos</a>
          </li>
          <li>
              <a href="{{url('consulting')}}">Consultoria</a>
          </li>
          <li>
-             <a href="{{url('suppliers')}}">Vinícolas</a>
+             <a href="{{url('/#wineries-logo')}}">Vinícolas</a>
          </li>
          <li>
              <a href="{{url('contact')}}">Contatos</a>

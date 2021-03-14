@@ -27,16 +27,16 @@
 
         <div class="description">
             <div class="image">
-                <img src="./assets/images/produtos/vinho-branco-de-mesa-em-sao-paulo-teste.png" width="220" height="550" alt="Vinhos em atacado direto da vinícola armazem vieira" />
+                <img src="{{ asset('storage/'.$details->image) }}" width="220" height="550" alt="Vinhos em atacado direto da vinícola armazem vieira" />
             </div>
             <div class="title">
                 <h1>{{ $details->title }}</h1>
                 <small>Caixa com {{ $details->qtda_per_carton }} garrafas</small>
 
                 <div class="detailsTitle">
-                    <img src="./assets/images/icones/italy.png" width="46" height="46" alt="Pais de origem" />
+                    <img src="{{asset('storage/'.$pais->flag)}}" width="46" height="46" alt="Pais de origem" />
                     <ul>
-                        <li>{{ $details->country_of_origin }}</li>
+                        <li>{{ $pais->name }}</li>
                         <li>{{ $details->classification }}</li>
                         <li>seco</li>
                     </ul>
@@ -105,7 +105,7 @@
                     <div class="grapeDetails">
                         <span class="title">País - Região</span>
                         <ul>
-                            <li>{{ $details->country_of_origin }} - {{ $details->region }}</li>
+                            <li>{{$pais->name}} - {{ $details->region }}</li>
                         </ul>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                     <div class="grapeDetails">
                         <span class="title">Fabricante</span>
                         <ul>
-                            <li>{{ $details->winery_id }}</li>
+                            <li>{{ $supplier->title }}</li>
                         </ul>
                     </div>
                 </div>

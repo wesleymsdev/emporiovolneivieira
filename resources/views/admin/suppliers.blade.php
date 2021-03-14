@@ -73,13 +73,13 @@
             <div class="list-of-wineries">
                 @foreach($suppliers as $supplier)
                 <div class="wineries">
-                    <img src="{{ $supplier->image }}" width="174" height="120" alt="">
+                    <img src="{{ asset('storage/'.$supplier->image) }}" width="174" height="120" alt="">
                     <h3>{{ $supplier->title }}</h3>
                     <small>{{ $supplier->region }}, {{ $supplier->country }} <br> Tel:. {{ $supplier->phone }}</small>
                     <form action="#">
                         <input type="hidden" id="winerie" name="winerie" value="1">
                         <input type="hidden" id="winerie" name="winerie" value="1">
-                        <a href="" class="btn-destroy">Excluir</a>
+                        <a href="#" class="btn-destroy">Excluir</a>
                         <a href="#" class="btn-edit">Editar</a>
                     </form>
                 </div>
@@ -93,7 +93,7 @@
                 </ul>
             </nav>
 
-            <img class="new" src="{{ asset('img/icones/new.svg') }}" width="64" height="64" alt="new icon" />
+            <img class="new" src="{{ asset('img/icones/add.svg') }}" width="44" height="44" alt="new icon" />
             @if($errors->any())
             @foreach($errors->all() as $error)
             <div class="alert-danger">{{ $error }}</div>
@@ -106,6 +106,7 @@
             </div>
             @endif
         </div>
+
     </div>
 
     <!--Scripts Start-->

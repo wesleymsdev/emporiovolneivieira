@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Suppliers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class SuppliersController extends Controller
@@ -16,7 +17,8 @@ class SuppliersController extends Controller
      */
     public function index()
     {
-        $suppliers = DB::table('suppliers')->paginate(12);
+        $suppliers = DB::table('suppliers')->paginate(8);
+
 
         return view('admin/suppliers', ['suppliers' => $suppliers]);
     }
@@ -43,10 +45,12 @@ class SuppliersController extends Controller
         $request->validate([
             'title'   => 'required|min:3|max:25',
             'country' => 'required|min:3|max:25',
-            'region'  => 'required|min:3|max:25',
+            'region'  => 'required|min:2|max:25',
             'phone'   => 'required|min:3|max:25',
             'image'   => 'image|mimes:jpeg,png,webp,jpg,gif,svg|max:2048',
         ]);
+
+
 
         Suppliers::create([
 

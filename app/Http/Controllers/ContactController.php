@@ -21,6 +21,7 @@ class ContactController extends Controller
         ]);
 
         $contact = $request->all();
+
         Contact::create($contact);
 
         return redirect('/contact')->with('response', 'Contato enviado com sucesso!');

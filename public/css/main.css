@@ -57,6 +57,7 @@ body {
   flex-direction: column;
   position: relative;
   align-items: center;
+  justify-content: center;
   width: 320px;
   height: 95%;
   background-color: var(--white);
@@ -128,21 +129,33 @@ body {
 }
 
 .alert-danger {
+  position: absolute;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 65px;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
   text-align: center;
   color: var(--alert-danger-text);
   border: 1px solid var(--alert-danger-border);
   background-color: var(--alert-danger);
 }
+.alert-danger ul {
+  margin: 0;
+  padding: 0;
+}
 
 .alert-success {
+  position: absolute;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 68px;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
   text-align: center;
   color: var(--alert-success-text);
   border: 1px solid var(--alert-success-border);
@@ -170,12 +183,12 @@ body {
 .btn-edit {
   text-align: center;
   text-decoration: none;
-  background-color: var(--green);
-  padding: 15px;
-  width: 150px;
+  background-color: var(--darkblue);
+  padding: 5px;
+  width: 110px;
   margin: 0 auto;
   margin-bottom: var(--space-10);
-  margin-top: var(--space-20);
+  margin-top: var(--space-10);
   color: var(--white);
   cursor: pointer;
   transition: 0.4s ease-in-out;
@@ -189,11 +202,11 @@ body {
   text-align: center;
   text-decoration: none;
   background-color: var(--black-2);
-  padding: 15px;
-  width: 150px;
+  padding: 5px;
+  width: 110px;
   margin: 0 auto;
   margin-bottom: var(--space-10);
-  margin-top: var(--space-20);
+  margin-top: var(--space-10);
   color: var(--white);
   cursor: pointer;
   transition: 0.2s ease-in-out;
@@ -297,7 +310,6 @@ body {
 @media (min-width: 1920px) {
   #body #modal .container {
     width: 70%;
-    height: 85%;
   }
   #body #modal .container form {
     flex-direction: row;
@@ -628,7 +640,7 @@ body {
   width: 100%;
   height: 377px;
   background-color: var(--black);
-  background-image: url("../images/background/armazem-vieira-atacado.webp");
+  background-image: url("/img/background/armazem-vieira-atacado.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -837,7 +849,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--blue);
-  background-image: url("../images/background/background-historia-vinhos-sucos-brasil-armazem-vieira.webp");
+  background-image: url("/img/background/background-historia-vinhos-sucos-brasil-armazem-vieira.webp");
   background-position: right;
   background-repeat: no-repeat;
   width: 100%;
@@ -898,7 +910,7 @@ body {
 }
 #history .ourStory .winery {
   position: relative;
-  background-image: url("../images/historia/historia-armazem-vieira-vinhos-sucos-bebidas-em-atacado.webp");
+  background-image: url("/img/historia/historia-armazem-vieira-vinhos-sucos-bebidas-em-atacado.webp");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -935,11 +947,10 @@ body {
   width: 100%;
   height: 500px;
   background-color: var(--blue);
-  background-image: url("../images/background/proposito-armazem-vieira-vinhos-sucos-bebidas-vinicolas.webp");
+  background-image: url("/img/background/proposito-armazem-vieira-vinhos-sucos-bebidas-vinicolas.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: 75%;
-  margin-bottom: var(--space-20);
 }
 #history .purpose h2 {
   color: var(--white);
@@ -1451,6 +1462,7 @@ body {
   }
 }
 #admin {
+  flex-direction: column;
   position: relative;
   margin: 81px 0 0 0;
   width: 100%;
@@ -1464,13 +1476,13 @@ body {
 }
 #admin .container {
   flex-direction: column;
+  justify-content: start;
   width: 100%;
-  top: 62px;
 }
 #admin .container .new {
   position: absolute;
-  right: 20px;
-  top: 70px;
+  right: 5px;
+  top: 8px;
   cursor: pointer;
 }
 #admin .container h2 {
@@ -1551,32 +1563,11 @@ body {
   flex-direction: column;
   width: 100%;
   align-items: center;
+  text-align: center;
 }
 #admin .container .list-product .product .description h3 {
   margin: 0;
   font-size: 22px;
-}
-#admin .container .pagination {
-  justify-content: center;
-  align-items: center;
-  padding: var(--space-20);
-}
-#admin .container .pagination ul {
-  margin: 0;
-  padding: 0;
-}
-#admin .container .pagination ul li a {
-  text-align: center;
-  padding: 10px;
-  text-decoration: none;
-  color: var(--white);
-  background-color: var(--blue-5);
-  margin: 5px;
-  transition: 0.2s ease-out;
-}
-#admin .container .pagination ul li a:hover {
-  background-color: var(--blue);
-  transition: 0.2s ease-in;
 }
 #admin .container .list_of_categories {
   background-color: var(--gray-bg);
@@ -1635,6 +1626,29 @@ body {
 #admin .container .registered-users .card p {
   margin: 0;
 }
+#admin .pagination {
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  padding: var(--space-20);
+}
+#admin .pagination ul {
+  margin: 0;
+  padding: 0;
+}
+#admin .pagination ul li a {
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--darkblue);
+  margin: 5px;
+  transition: 0.2s ease-out;
+}
+#admin .pagination ul li a:hover {
+  background-color: var(--blue);
+  transition: 0.2s ease-in;
+}
 
 @media (min-width: 768px) {
   #admin .container {
@@ -1668,7 +1682,7 @@ body {
     margin: 0;
   }
   #admin .teste {
-    position: absolute;
+    position: fixed;
     z-index: 200;
     justify-content: flex-end;
     padding: 5px;
@@ -1706,7 +1720,6 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: indigo;
     font-size: 14px;
   }
   #admin .teste .log .user-log {
@@ -1743,7 +1756,7 @@ body {
     display: flex;
     width: 30%;
     height: 100%;
-    background-color: var(--darkblue);
+    background-color: var(--black-admin);
   }
   #admin .menu-left .top {
     position: relative;
@@ -1780,12 +1793,12 @@ body {
     line-height: 31px;
     width: 100%;
     font-size: 16px;
-    color: var(--white);
+    color: var(--gray-1);
     transition: 0.2s ease-in-out;
   }
   #admin .menu-left nav ul li:hover {
     transition: 0.2s ease-in;
-    background-color: #524896;
+    background-color: var(--black-admin-over);
     cursor: pointer;
   }
   #admin .menu-left nav ul li:hover a {
@@ -1831,11 +1844,12 @@ body {
   }
   #admin .container {
     position: absolute;
-    justify-content: space-between;
     align-items: center;
     right: 0;
+    top: 63px;
     z-index: 1;
     width: 70%;
+    height: calc(100vh - 63px);
   }
   #admin .container form {
     width: 95%;
@@ -1976,7 +1990,7 @@ body {
 #login {
   width: 100%;
   height: 100vh;
-  background-color: var(--gray);
+  background-color: #031731d8;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -2015,7 +2029,7 @@ body {
   background-color: var(--gray-bg);
 }
 #login .container form label {
-  color: var(--white);
+  color: var(--blue);
   font-size: 14px;
 }
 #login .container .message {
@@ -2045,7 +2059,6 @@ body {
 @media (min-width: 1024px) {
   #login {
     flex-direction: row;
-    background-color: var(--gray);
   }
   #login .container {
     width: 40%;
@@ -2054,6 +2067,7 @@ body {
   }
   #login .container h3 {
     display: flex;
+    color: var(--blue);
   }
   #login .container .header-login {
     display: none;
@@ -2188,7 +2202,7 @@ body {
   width: 100%;
   height: 423px;
   background-color: cadetblue;
-  background-image: url("../images/background/contato-vinhos-sucos-vinicolas-sao-paulo.png");
+  background-image: url("/img/background/contato-vinhos-sucos-vinicolas-sao-paulo.png");
   background-position: center;
   background-size: cover;
 }
@@ -2338,6 +2352,8 @@ body {
 :root {
   --black: #000000;
   --black-2: #242424;
+  --black-admin: #251f1f;
+  --black-admin-over: #333232;
   --blue: #072b59;
   --blue-1: #041730;
   --blue-2: #3bacd9;
@@ -2413,7 +2429,7 @@ body {
 }
 #consultoria {
   position: relative;
-  background-image: url("../images/background/consultoria-vinhos-vinicolas-brasil.webp");
+  background-image: url("/img/background/consultoria-vinhos-vinicolas-brasil.webp");
   background-size: cover;
   background-position-x: -100px;
   background-position-y: 60px;
@@ -2706,6 +2722,58 @@ body {
     transition: 0.6s;
   }
   #footer .footer {
+    font-size: 16px;
+  }
+}
+#admin .container .list-of-countries {
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#admin .container .list-of-countries .countries {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray-bg);
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+}
+#admin .container .list-of-countries img {
+  width: 50px;
+  height: 50px;
+}
+#admin .container .list-of-countries h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+#admin .container .list-of-countries small {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #admin .container .list-of-countries {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #admin .container .list-of-countries .countries {
+    width: 40%;
+  }
+}
+@media (min-width: 1440px) {
+  #admin .container .list-of-countries .countries {
+    width: 25%;
+  }
+}
+@media (min-width: 1920px) {
+  #admin .container .list-of-countries .countries {
+    width: 18%;
+  }
+  #admin .container .list-of-countries .countries h3 {
+    font-size: 22px;
+  }
+  #admin .container .list-of-countries .countries small {
     font-size: 16px;
   }
 }

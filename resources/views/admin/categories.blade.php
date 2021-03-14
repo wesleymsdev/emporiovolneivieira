@@ -51,7 +51,7 @@
 
             </div>
 
-            <img class="new" src="{{ asset('img/icones/new.svg') }}" width="64" height="64" alt="new icon" />
+            <img class="new" src="{{ asset('img/icones/add.svg') }}" width="44" height="44" alt="new icon" />
 
             @if($errors->any())
             @foreach($errors->all() as $error)

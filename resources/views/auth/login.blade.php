@@ -1,56 +1,55 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+<head>
+    <x-head></x-head>
+</head>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+<body>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+    <div id="login">
+        <div class="container alert">
+            <div class="header-login">
+                <img src="{{ asset('img/logotipos/100x100_armazem_vieira.png') }}" width="70" height="70" alt="logo" />
             </div>
+            <small>Faça login para ter acesso ao sistema</small>
+            <img src="{{ asset('img/logotipos/100x100_armazem_vieira.png') }}" width="70" height="70" alt="logo" />
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <input type="email" name="email" id="username" required autofocus />
+                <label for="username">email</label>
+                <input type="password" name="password" id="password" required autocomplete="current-password" />
+                <label for="password">Senha</label>
+                <button type="submit" class="btn-submit">{{ __('Entrar') }}</button>
+            </form>
+            <div class="message">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24.984" viewBox="0 0 25 24.984">
+                    <g transform="translate(0 -0.168)">
+                        <ellipse cx="12.5" cy="12.492" rx="12.5" ry="12.492" transform="translate(0 0.168)" fill="#e04f5f" />
+                        <g transform="translate(22.363 12.66) rotate(135)">
+                            <rect width="2.734" height="13.949" transform="translate(5.606 0)" fill="#fff" />
+                            <rect width="13.949" height="2.734" transform="translate(0 5.605)" fill="#fff" />
+                        </g>
+                    </g>
+                </svg> -->
+                <!-- Session Status -->
+                <x-auth-session-status class="mb-4" :status="session('status')" />
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
+                <!-- Validation Errors -->
+                <x-auth-validation-errors class="mb-4" :errors="$errors" />
             </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
+        </div>
+        <div class="content">
+            <div class="overlay">
+                <img src="{{ asset('img/logotipos/100x100_armazem_vieira.png') }}" width="70" height="70" alt="logo" />
+                <small>Desde 2000</small>
             </div>
+        </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+    </div>
+    <!--Script Menu Mobile Start-->
+    <script src="assets/js/utils.js"></script>
+    <!--End Script Menu Mobile-->
+</body>
 
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+</html>

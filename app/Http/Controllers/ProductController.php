@@ -17,14 +17,19 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = DB::table('products')->paginate(12);
+        $products = DB::table('products')->join('countries', 'uf_id', '=', 'countries.id')->paginate(12);
         $categories = DB::table('categories')->get();
         $suppliers = DB::table('suppliers')->get();
+        $countries = DB::table('countries')->get();
+
+
 
         return view('admin/catalog', [
             'products'   => $products,
             'categories' => $categories,
-            'suppliers'  => $suppliers
+            'suppliers'  => $suppliers,
+            'countries'  => $countries,
+
         ]);
     }
 
@@ -61,19 +66,26 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
 
             'category_id'       => 'required | min:1 | max:255',
             'title'             => 'required | min:3 | max:255',
             'winery_id'         => 'required | min:1 | max:255',
             'qtda_per_carton'   => 'required | min:1 | max:255',
-            'country_of_origin' => 'required | min:3 | max:255',
+            'uf_id'             => 'required | min:1 | max:255',
             'region'            => 'required | min:3 | max:255',
             'classification'    => 'required | min:3 | max:255',
             'description'       => 'required | min:3 | max:255',
             'type_of_grape'     => 'required | min:3 | max:255',
             'harvest'           => 'required | min:3 | max:255',
             'temperature'       => 'required | min:2 | max:255',
+
+            'graduate'       => 'required | min:2 | max:255',
+            'volume'       => 'required | min:1 | max:255',
+            'measures'       => 'required | min:2 | max:255',
+            'weight'       => 'required | min:2 | max:255',
+
             'olfactory'         => 'required | min:3 | max:255',
             'visual'            => 'required | min:3 | max:255',
             'taste'             => 'required | min:3 | max:255',
@@ -86,13 +98,19 @@ class ProductController extends Controller
             'title'             => $request->input('title'),
             'winery_id'         => $request->input('winery_id'),
             'qtda_per_carton'   => $request->input('qtda_per_carton'),
-            'country_of_origin' => $request->input('country_of_origin'),
+            'uf_id'             => $request->input('uf_id'),
             'region'            => $request->input('region'),
             'classification'    => $request->input('classification'),
             'description'       => $request->input('description'),
             'type_of_grape'     => $request->input('type_of_grape'),
             'harvest'           => $request->input('harvest'),
             'temperature'       => $request->input('temperature'),
+
+            'graduate'       => $request->input('graduate'),
+            'volume'       => $request->input('volume'),
+            'measures'       => $request->input('measures'),
+            'weight'       => $request->input('weight'),
+
             'olfactory'         => $request->input('olfactory'),
             'visual'            => $request->input('visual'),
             'taste'             => $request->input('taste'),
@@ -111,8 +129,15 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $details = DB::table('products')->find($id);
-        return view('product', ['details' => $details]);
+        $details = Product::find($id);
+        $pais = $details->countries()->first();
+        $supplier = $details->suppliers()->first();
+
+        return view('product', [
+            'details' => $details,
+            'pais' => $pais,
+            'supplier' => $supplier
+        ]);
     }
 
     /**

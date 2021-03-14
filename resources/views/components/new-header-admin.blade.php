@@ -6,7 +6,9 @@
     </div>
     <div class="log">
 
-        <div class="image">Foto</div>
+        <div class="image">
+            <img src="{{ asset('img/icones/avatar.svg') }}" alt="">
+        </div>
 
         <div class="user-log">
             <p>{{ Auth::user()->name }}</p>
@@ -20,7 +22,6 @@
                                         this.closest('form').submit();">Sair</a>
 
         </form>
-
 
     </div>
 </div>

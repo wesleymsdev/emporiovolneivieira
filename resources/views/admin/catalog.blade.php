@@ -38,8 +38,11 @@
                     <input type="text" id="qtda_per_carton" name="qtda_per_carton" />
 
                     <label for="country_of_origin">País de origem:</label>
-                    <input type="text" id="country_of_origin" name="country_of_origin" />
-
+                    <select name="uf_id" id="country">
+                        @foreach($countries as $country)
+                        <option value="{{ $country->id }}">{{$country->name}}</option>
+                        @endforeach
+                    </select>
                     <label for="region">Região:</label>
                     <input type="text" id="region" name="region" />
 
@@ -60,8 +63,19 @@
 
                 </div>
                 <div class="col">
-                    <label>Características do Produto</label>
+                    <label for="graduate">Graduação Alcoólica:</label>
+                    <input type="text" id="graduate" name="graduate" />
 
+                    <label for="volume">Volume em litros:</label>
+                    <input type="text" id="volume" name="volume" />
+
+                    <label for="measures">Medidas:(0x 0x 0x)</label>
+                    <input type="text" id="measures" name="measures" />
+
+                    <label for="weight">Peso</label>
+                    <input type="text" id="weight" name="weight" />
+
+                    <label>Características do Produto</label>
                     <input type="text" id="olfactory" name="olfactory" />
                     <label for="olfactory">Oufativa:</label>
 
@@ -141,7 +155,7 @@
                 </ul>
             </nav>
 
-            <img class="new" src="{{ asset('img/icones/new.svg') }}" width="64" height="64" alt="new icon" />
+            <img class="new" src="{{ asset('img/icones/add.svg') }}" width="44" height="44" alt="new icon" />
             @if($errors->any())
             @foreach($errors->all() as $error)
             <div class="alert-danger">{{ $error }}</div>

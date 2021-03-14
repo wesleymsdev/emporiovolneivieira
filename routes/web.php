@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CountriesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\UserController;
@@ -37,9 +38,6 @@ Route::get('/history', function () {
 Route::get('/', [ProductController::class, 'feactured']);
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
-
-
-
 Route::get('/admin/users', function () {
     return view('admin/users');
 });
@@ -52,8 +50,11 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    // Rotas Admin
+    // Rota de paises
+    Route::post('/admin/countries', [CountriesController::class, 'store']);
+    Route::get('/admin/countries', [CountriesController::class, 'index']);
 
+    // Rotas Admin
     Route::get('/admin/categories', function () {
         return view('admin/categories');
     });

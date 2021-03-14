@@ -16,17 +16,31 @@ class Product extends Model
         'title',
         'winery_id',
         'qtda_per_carton',
-        'country_of_origin',
+        'uf_id',
         'region',
         'classification',
         'description',
         'type_of_grape',
         'harvest',
         'temperature',
+        'graduate',
+        'volume',
+        'measures',
+        'weight',
         'olfactory',
         'visual',
         'taste',
         'harmonization',
         'image'
     ];
+
+    public function countries()
+    {
+        return $this->hasOne(Countries::class, 'id', 'uf_id');
+    }
+
+    public function suppliers()
+    {
+        return $this->hasOne(Suppliers::class, 'id', 'winery_id');
+    }
 }

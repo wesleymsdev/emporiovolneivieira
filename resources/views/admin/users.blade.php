@@ -13,18 +13,19 @@
             <h2>Cadastrar novo usuário</h2>
 
             <form method="POST" action="/new-user" enctype="multipart/form-data">
-
                 @csrf
-                <input type="text" id="name" name="name" required />
-                <label for="name">Nome:</label>
+                <div class="col">
+                    <input type="text" id="name" name="name" required />
+                    <label for="name">Nome:</label>
 
-                <input type="email" id="email" name="email" required />
-                <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                    <label for="email">Email:</label>
 
-                <input type="password" id="password" name="password" required />
-                <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required />
+                    <label for="password">Senha:</label>
 
-                <button type="submit" class="btn-submit"> Cadastrar</button>
+                    <button type="submit" class="btn-submit"> Cadastrar</button>
+                </div>
 
             </form>
 
@@ -62,7 +63,15 @@
 
             </div>
 
-            <img class="new" src="{{ asset('img/icones/new.svg') }}" width="54" height="54" alt="new icon" />
+            <nav class="pagination">
+                <ul>
+                    <li><a href="">Prev</a></li>
+                    <li><a href="">Next</a></li>
+                </ul>
+            </nav>
+
+            <img class="new" src="{{ asset('img/icones/add.svg') }}" width="44" height="44" alt="new icon" />
+
             @if($errors->any())
             @foreach($errors->all() as $error)
             <div class="alert-danger">{{ $error }}</div>

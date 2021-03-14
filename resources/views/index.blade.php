@@ -42,20 +42,20 @@
         @foreach($feactured as $values)
         <div class="product">
             <div class="image">
-                <img src="{{ $values->image }}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
+                <img src="{{ asset('storage/'.$values->image) }}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
             </div>
             <p class="title-product">{{ $values->title }}</p>
 
             <div class="description">
                 <p>{{ $values->description }}</p>
                 <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
+                    <span class="description-bold">Graduação alcoólica:</span> {{ $values->graduate }}%vol
                 </small>
                 <small>
-                    <span class="description-bold">Volume:</span> 1,5L
+                    <span class="description-bold">Volume:</span> {{$values->volume}}L
                 </small>
                 <small>
-                    <span class="description-bold">Caixa:</span> {{ $values->qtda_per_carton }} unidades | 40x27x29 | 18 Kg
+                    <span class="description-bold">Caixa:</span> {{ $values->qtda_per_carton }} unidades | {{ $values->measures }} | {{ $values->weight }} Kg
                 </small>
 
                 <a href="{{ 'product/'.$values->id }}" class="btn">Ver mais</a>
@@ -74,20 +74,20 @@
         @foreach($wines as $values)
         <div class="product">
             <div class="image">
-                <img src="{{ $values->image }}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
+                <img src="{{ asset('storage/'.$values->image) }}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
             </div>
             <p class="title-product">{{ $values->title }}</p>
 
             <div class="description">
                 <p>{{ $values->description }}</p>
                 <small>
-                    <span class="description-bold">Graduação alcoólica:</span> 10,8%vol
+                    <span class="description-bold">Graduação alcoólica:</span> {{ $values->graduate }}%vol
                 </small>
                 <small>
-                    <span class="description-bold">Volume:</span> 1,5L
+                    <span class="description-bold">Volume:</span> {{$values->volume}}L
                 </small>
                 <small>
-                    <span class="description-bold">Caixa:</span> {{ $values->qtda_per_carton }} unidades | 40x27x29 | 18 Kg
+                    <span class="description-bold">Caixa:</span> {{ $values->qtda_per_carton }} unidades | {{ $values->measures }} | {{ $values->weight }} Kg
                 </small>
 
                 <a href="{{ 'product/'.$values->id }}" class="btn">Ver mais</a>
@@ -151,7 +151,7 @@
         @foreach($sparkling as $values)
         <div class="product">
             <div class="image">
-                <img src="{{ $values->image }}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
+                <img src="{{ asset('storage/'.$values->image)}}" width="140" height="350" alt="Vinhos, bebidas em atacado armazem vieira" />
             </div>
             <p class="title-product">{{ $values->title }}</p>
 

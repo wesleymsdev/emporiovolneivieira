@@ -59,6 +59,7 @@ body {
             flex-direction: column;
             position: relative;
             align-items: center;
+            justify-content: center;
             width: 320px;
             height: 95%;
             background-color: var(--white);
@@ -145,21 +146,34 @@ body {
 }
 
 .alert-danger {
+    position: absolute;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height: 65px;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
     text-align: center;
     color: var(--alert-danger-text);
     border: 1px solid var(--alert-danger-border);
     background-color: var(--alert-danger);
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .alert-success {
+    position: absolute;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height: 68px;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
     text-align: center;
     color: var(--alert-success-text);
     border: 1px solid var(--alert-success-border);
@@ -188,12 +202,12 @@ body {
 .btn-edit {
     text-align: center;
     text-decoration: none;
-    background-color: var(--green);
-    padding: 15px;
-    width: 150px;
+    background-color: var(--darkblue);
+    padding: 5px;
+    width: 110px;
     margin: 0 auto;
     margin-bottom: var(--space-10);
-    margin-top: var(--space-20);
+    margin-top: var(--space-10);
     color: var(--white);
     cursor: pointer;
     transition: 0.4s ease-in-out;
@@ -208,11 +222,11 @@ body {
     text-align: center;
     text-decoration: none;
     background-color: var(--black-2);
-    padding: 15px;
-    width: 150px;
+    padding: 5px;
+    width: 110px;
     margin: 0 auto;
     margin-bottom: var(--space-10);
-    margin-top: var(--space-20);
+    margin-top: var(--space-10);
     color: var(--white);
     cursor: pointer;
     transition: 0.2s ease-in-out;
@@ -341,7 +355,6 @@ body {
         #modal {
             .container {
                 width: 70%;
-                height: 85%;
 
                 form {
                     flex-direction: row;
