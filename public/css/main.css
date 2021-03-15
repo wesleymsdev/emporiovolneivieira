@@ -1475,6 +1475,7 @@ body {
   display: none;
 }
 #admin .container {
+  position: relative;
   flex-direction: column;
   justify-content: start;
   width: 100%;
@@ -1626,15 +1627,24 @@ body {
 #admin .container .registered-users .card p {
   margin: 0;
 }
+#admin .container .footer-admin {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: var(--gray-bg);
+}
 #admin .pagination {
   justify-content: center;
   align-items: center;
+  width: 100%;
   bottom: 0;
-  padding: var(--space-20);
 }
 #admin .pagination ul {
+  justify-content: space-between;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 #admin .pagination ul li a {
   text-align: center;
@@ -1868,6 +1878,9 @@ body {
   #admin .container .registered-users .card small {
     font-size: 16px;
   }
+  #admin .container .footer-admin {
+    width: 70%;
+  }
 }
 @media (min-width: 1440px) {
   #admin .teste .logo {
@@ -1895,6 +1908,9 @@ body {
   }
   #admin .container .registered-users .card small {
     font-size: 16px;
+  }
+  #admin .container .footer-admin {
+    width: 85%;
   }
 }
 @media (min-width: 1920px) {

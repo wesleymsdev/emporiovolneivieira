@@ -148,13 +148,6 @@
                 @endforeach
             </div>
 
-            <nav class="pagination">
-                <ul>
-                    <li><a href="">Prev</a></li>
-                    <li><a href="">Next</a></li>
-                </ul>
-            </nav>
-
             <img class="new" src="{{ asset('img/icones/add.svg') }}" width="44" height="44" alt="new icon" />
             @if($errors->any())
             @foreach($errors->all() as $error)
@@ -167,6 +160,14 @@
                 {{ session('response') }}
             </div>
             @endif
+            <footer class="footer-admin">
+                <nav class="pagination">
+                    <ul>
+                        <li><a href="">Prev</a></li>
+                        <li><a href="">Next</a></li>
+                    </ul>
+                </nav>
+            </footer>
 
         </div>
 

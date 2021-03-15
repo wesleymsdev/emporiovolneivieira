@@ -64,7 +64,14 @@
                 {{ session('response') }}
             </div>
             @endif
-
+            <footer class="footer-admin">
+                <nav class="pagination">
+                    <ul>
+                        <li><a href="">Prev</a></li>
+                        <li><a href="">Next</a></li>
+                    </ul>
+                </nav>
+            </footer>
         </div>
 
     </div>
@@ -72,6 +79,7 @@
     <!--Scripts Start-->
     <script src="{{asset('js/utils.js')}}"></script>
     <script src="{{asset('js/modal.js')}}"></script>
+    <script src="{{asset('js/salutation.js')}}"></script>
     <!--End Script Menu Mobile-->
 </body>
 

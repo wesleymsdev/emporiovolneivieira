@@ -78,7 +78,7 @@
 		s1.964-4.377,4.377-4.377s4.377,1.964,4.377,4.377C22.4,79.247,20.436,81.211,18.022,81.211z" />
                      </g>
                  </svg>
-                 <a href="/admin/catalog">Catálogo de produtos</a>
+                 <a href="/admin/catalog">Produtos</a>
              </li>
              <!-- <span class="title">FORNECEDORES</span> -->
 
@@ -110,7 +110,7 @@
                      </g>
                  </svg>
 
-                 <a href="/admin/suppliers">Relação de Fornecedores</a>
+                 <a href="/admin/suppliers">Fornecedores</a>
              </li>
              <!-- <span class="title">USUÁRIOS</span> -->
 
@@ -121,7 +121,7 @@
                          <path style="fill:#ffffff;" d="M41.2452,33.0349a16,16,0,1,0-18.49,0A26.0412,26.0412,0,0,0,4,58a2,2,0,0,0,2,2H58a2,2,0,0,0,2-2A26.0412,26.0412,0,0,0,41.2452,33.0349ZM20,20A12,12,0,1,1,32,32,12.0137,12.0137,0,0,1,20,20ZM8.09,56A22.0293,22.0293,0,0,1,30,36h4A22.0293,22.0293,0,0,1,55.91,56Z" />
                      </g>
                  </svg>
-                 <a href="/admin/users">Usuários Cadastrados</a>
+                 <a href="/admin/users">Usuários</a>
              </li>
          </ul>
 
