@@ -78,7 +78,7 @@ class ProductController extends Controller
             'classification'    => 'required | min:3 | max:255',
             'description'       => 'required | min:3 | max:255',
             'type_of_grape'     => 'required | min:3 | max:255',
-            'harvest'           => 'required | min:3 | max:255',
+            'harvest'           => 'required | min:2 | max:255',
             'temperature'       => 'required | min:2 | max:255',
 
             'graduate'       => 'required | min:2 | max:255',
