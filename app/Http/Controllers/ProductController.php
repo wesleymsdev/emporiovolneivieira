@@ -21,6 +21,7 @@ class ProductController extends Controller
         $categories = DB::table('categories')->get();
         $suppliers = DB::table('suppliers')->get();
         $countries = DB::table('countries')->get();
+        $exposure = DB::table('exposure')->get();
 
 
 
@@ -29,6 +30,7 @@ class ProductController extends Controller
             'categories' => $categories,
             'suppliers'  => $suppliers,
             'countries'  => $countries,
+            'exposure'   => $exposure
 
         ]);
     }
@@ -70,6 +72,7 @@ class ProductController extends Controller
         $request->validate([
 
             'category_id'       => 'required | min:1 | max:255',
+            'exposure'          => 'required | min:1 | max:255',
             'title'             => 'required | min:3 | max:255',
             'winery_id'         => 'required | min:1 | max:255',
             'qtda_per_carton'   => 'required | min:1 | max:255',
@@ -81,10 +84,10 @@ class ProductController extends Controller
             'harvest'           => 'required | min:2 | max:255',
             'temperature'       => 'required | min:2 | max:255',
 
-            'graduate'       => 'required | min:2 | max:255',
-            'volume'       => 'required | min:1 | max:255',
-            'measures'       => 'required | min:2 | max:255',
-            'weight'       => 'required | min:2 | max:255',
+            'graduate'          => 'required | min:2 | max:255',
+            'volume'            => 'required | min:1 | max:255',
+            'measures'          => 'required | min:2 | max:255',
+            'weight'            => 'required | min:2 | max:255',
 
             'olfactory'         => 'required | min:3 | max:255',
             'visual'            => 'required | min:3 | max:255',
@@ -95,6 +98,7 @@ class ProductController extends Controller
 
         Product::create([
             'category_id'       => $request->input('category_id'),
+            'exposure'          => $request->input('exposure'),
             'title'             => $request->input('title'),
             'winery_id'         => $request->input('winery_id'),
             'qtda_per_carton'   => $request->input('qtda_per_carton'),
@@ -106,10 +110,10 @@ class ProductController extends Controller
             'harvest'           => $request->input('harvest'),
             'temperature'       => $request->input('temperature'),
 
-            'graduate'       => $request->input('graduate'),
-            'volume'       => $request->input('volume'),
-            'measures'       => $request->input('measures'),
-            'weight'       => $request->input('weight'),
+            'graduate'          => $request->input('graduate'),
+            'volume'            => $request->input('volume'),
+            'measures'          => $request->input('measures'),
+            'weight'            => $request->input('weight'),
 
             'olfactory'         => $request->input('olfactory'),
             'visual'            => $request->input('visual'),

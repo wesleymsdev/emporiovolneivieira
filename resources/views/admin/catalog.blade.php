@@ -24,6 +24,14 @@
                         @endforeach
                     </select>
 
+                    <label for="exposure">Exposição</label>
+                    <select name="exposure" id="exposure">
+                        @foreach($exposure as $values)
+                        <option value="{{ $values->id }}">{{ $values->exposure }}</option>
+                        @endforeach
+
+                    </select>
+
                     <label for="title">Titulo do produto:</label>
                     <input type="text" id="title" name="title" />
 
@@ -58,11 +66,11 @@
                     <label for="harvest">Safra:</label>
                     <input type="text" id="harvest" name="harvest" />
 
+                </div>
+                <div class="col">
                     <label for="temperature">Temperatura:</label>
                     <input type="text" id="temperature" name="temperature" />
 
-                </div>
-                <div class="col">
                     <label for="graduate">Graduação Alcoólica:</label>
                     <input type="text" id="graduate" name="graduate" />
 
@@ -75,7 +83,7 @@
                     <label for="weight">Peso</label>
                     <input type="text" id="weight" name="weight" />
 
-                    <label>Características do Produto</label>
+                    <label class="label-title">Características do Produto</label>
                     <input type="text" id="olfactory" name="olfactory" />
                     <label for="olfactory">Oufativa:</label>
 

@@ -32,6 +32,7 @@
             margin: 0;
             margin-top: 35px;
             width: 100%;
+            font-weight: 100;
         }
 
         form {
@@ -533,7 +534,7 @@
                 }
             }
              .footer-admin{
-                width: 85%;
+                width: 80%;
             }
         }
     }
@@ -596,6 +597,9 @@
                 .card {
                     width: 433px;
                 }
+            }
+             .footer-admin{
+                width: 85%;
             }
         }
     }
